@@ -5,17 +5,17 @@ import os
 from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
 
 model = Sequential()
-model.add(Conv2D(32, (3, 3), input_shape=(3, 100, 300), data_format = 'channels_first'))
+model.add(Conv2D(32, (3, 3), input_shape=(100, 300, 3), data_format = 'channels_first'))
 model.add(Activation('relu'))
-model.add(MaxPooling2D(pool_size=(2, 2), dim_ordering="tf"))
+#model.add(MaxPooling2D(pool_size=(2, 2), dim_ordering="tf"))
 
-model.add(Conv2D(32, (3, 3), input_shape=(3, 100, 300), data_format = 'channels_first'))
-model.add(Activation('relu'))
-model.add(MaxPooling2D(pool_size=(2, 2), dim_ordering="tf"))
+# model.add(Conv2D(32, (3, 3), input_shape=(3, 100, 300), data_format = 'channels_first'))
+# model.add(Activation('relu'))
+# model.add(MaxPooling2D(pool_size=(2, 2), dim_ordering="tf"))
 
-model.add(Conv2D(64, (3, 3), input_shape=(3, 100, 300), data_format = 'channels_first'))
-model.add(Activation('relu'))
-model.add(MaxPooling2D(pool_size=(2, 2), dim_ordering="tf"))
+# model.add(Conv2D(64, (3, 3), input_shape=(3, 100, 300), data_format = 'channels_first'))
+# model.add(Activation('relu'))
+# model.add(MaxPooling2D(pool_size=(2, 2), dim_ordering="tf"))
 
 model.add(Flatten())
 model.add(Dense(64))
@@ -61,7 +61,7 @@ validation_generator = imggen.flow_from_directory(directory = val_dir,
 
 model.fit_generator(generator = train_generator,
                     steps_per_epoch = 2000 // batch_size,
-                    epochs = 50,
+                    epochs = 5,
                     validation_data = validation_generator,
                     validation_steps = 800 // batch_size)
 model.save_weights('try_one.h5')

@@ -2,33 +2,31 @@
 <html lang="en">
   <head>
     <title>The Sick Shrimp Project</title>
-	<link rel='icon' type='image/png' href='/static/favicon.png'/>
-	<link rel='stylesheet' href='/static/style.css'/>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"/>
+	  <link rel='icon' type='image/png' href='/static/favicon.png'/>
+	  <link rel='stylesheet' href='/static/style.css'/>
+	  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"/>
   </head>
-
   <body>
-	<h6>The Sick Shrimp Project</h6>
-	<div class="container">
-		<h1>What is The Sick Shrimp Project?</h1>
-		<p>The Sick Shrimp Project aims to source data on early mortality syndrome from aquaculture farmers worldwide. 
-		Farmers can participate by uploading pictures of their shrimp farms and entering information about recent weather 
-		conditions, water pH levels, and salinity of water. Through international collaboration, the Sick Shrimp Project 
-		can provide reliable predictors for early mortality syndrome in shrimp farms.</p>
-	</div>
-    	<div class="container">
-		<h1>Upload sus shrimpy</h1>
-		
-		<form method="POST" action="/upload" enctype="multipart/form-data">
+	  <h6>The Sick Shrimp Project</h6>
+	  <div class="container">
+		  <h1>What is The Sick Shrimp Project?</h1>
+		  <p>The Sick Shrimp Project aims to source data on early mortality syndrome from aquaculture farmers worldwide. 
+		  Farmers can participate by uploading pictures of their shrimp farms and entering information about recent weather 
+		  conditions, water pH levels, and salinity of water. Through international collaboration, the Sick Shrimp Project 
+		  can provide reliable predictors for early mortality syndrome in shrimp farms.</p>
+	  </div>
+    <div class="container">
+      <h1>Upload sus shrimpy</h1>
+		  <form method="POST" action="/upload" enctype="multipart/form-data">
 			Temperature:<br>
   				<input type="text" name="temp" value="enter value">
-  			<br>
+  		<br>
 			Water acidity (pH):<br>
   				<input type="text" name="ph" value="enter value">
-  			<br>
+  		<br>
 			Salinity:<br>
   				<input type="text" name="salt" value="enter value">
-  			<br>
+  		<br>
 		<div class="form-group">
 			<label for="inputFile">File input</label><br>
 			<input type="file" name="inputFile">
