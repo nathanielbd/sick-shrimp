@@ -64,9 +64,13 @@ def upload():
                 
                 #array = img_to_array(file)
                 #result = model.predict(array, batch_size = 1, verbose = 0)
-                return str(classes[0][0])
+
+                if str(classes[0][0]) == "1":
+                        return render_template("results.html", result = "normal")
+                else:
+                        return render_template("results.html", result = "infected")
         else:
-                printf("upload error")
+                return "upload error"
 
 
 if __name__ == "__main__":
