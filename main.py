@@ -1,5 +1,5 @@
 import os
-import numpy as np
+import numpy
 import cv2
 
 #import Image
@@ -44,7 +44,7 @@ def upload():
 	# os.mkdir(path)
 	# app.config['UPLOAD_FOLDER'] = path
 
-	path = '/UPLOAD_FOLDER'
+	path = 'UPLOAD_FOLDER'
 	app.config['UPLOAD_FOLDER'] = path
 
 	filename = secure_filename(file.filename) # save file 
@@ -55,7 +55,7 @@ def upload():
 	img = cv2.resize(img, (100, 300))
 	print(img)
 	img = numpy.reshape(img, [1, 100, 300, 3])
-	classes = model.predict_classes(img)
+	classes = model.predict_classes(img, batch_size = 1)
 	# os.chown(path, uid, gid)
 
 	#file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
