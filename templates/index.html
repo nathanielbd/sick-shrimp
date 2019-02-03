@@ -6,28 +6,28 @@
 	<link rel='stylesheet' href='/static/style.css'/>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"/>
   </head>
-  <style>
-	title {
-		text-align: center;
-		}
-	div.a {
-		text-align: center;
-		}
 
-	div.b {
-		text-align: center;
-		}
-	} 
-</style>
   <body>
 	<h6>The Sick Shrimp Project</h6>
-	<div class="a">
+	<div class="container">
 		<h1>What is The Sick Shrimp Project?</h1>
-		<p>blah blah blah</p>
+		<p>The Sick Shrimp Project aims to source data on early mortality syndrome from aquaculture farmers worldwide. 
+		Farmers can participate by uploading pictures of their shrimp farms and entering information about recent weather 
+		conditions, water pH levels, and salinity of water. </p>
 	</div>
-    <div class="b">
+    	<div class="container">
 		<h1>Upload sus shrimpy</h1>
+		
 		<form method="POST" action="/upload" enctype="multipart/form-data">
+			Temperature:<br>
+  				<input type="text" name="temp" value="enter value">
+  			<br>
+			Water acidity (pH):<br>
+  				<input type="text" name="ph" value="enter value">
+  			<br>
+			Salinity:<br>
+  				<input type="text" name="salt" value="enter value">
+  			<br>
 		<div class="form-group">
 			<label for="inputFile">File input</label><br>
 			<input type="file" name="inputFile">
